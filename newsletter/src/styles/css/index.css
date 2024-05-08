@@ -1,0 +1,108 @@
+@font-face {
+  font-family: roboto;
+  src: url(../../assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: robotobold;
+  src: url(../../assets/fonts/Roboto-Bold.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+@media screen and (min-width: 426px) {
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(235, 18%, 26%);
+    flex-flow: row;
+  }
+}
+
+.container {
+  background: hsl(0, 0%, 100%);
+  border-radius: 20px;
+}
+@media screen and (min-width: 426px) {
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    height: 85vh;
+    padding-inline: 30px;
+  }
+  .container .right-side {
+    width: 50%;
+  }
+  .container .right-side img {
+    position: relative;
+    right: -14%;
+    width: 89%;
+    margin-top: 20px;
+  }
+  .container .btn {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container .right-side {
+    width: 100%;
+  }
+  .container .right-side .img {
+    width: 100%;
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+  }
+}
+.container .hero h3 {
+  font-family: robotobold;
+  color: hsl(234, 29%, 20%);
+  margin: 10px auto;
+}
+.container .left-side {
+  padding: 10px;
+}
+@media screen and (max-width: 425px) {
+  .container .left-side {
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 426px) {
+  .container .left-side {
+    padding-top: 40px;
+    margin-top: 20px;
+    margin-right: -30px;
+    width: 50%;
+  }
+}
+.container .left-side ul {
+  list-style: none;
+  margin: 20px auto;
+}
+.container .left-side ul li {
+  font-size: 14px;
+  margin: 10px auto;
+}
+.container .left-side .form .btn {
+  background-color: hsl(234, 29%, 20%);
+  padding: 15px;
+  text-transform: lowercase;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.container .left-side .form h6 {
+  font-size: 16px;
+  color: hsl(234, 29%, 20%);
+  font-family: robotobold;
+}
+@media screen and (min-width: 426px) {
+  .container .left-side .form h6 {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+}

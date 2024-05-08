@@ -1,0 +1,39 @@
+// Colors
+$primary: hsl(4, 100%, 67%);
+
+// Neutral colors
+$darkslategray: hsl(234, 29%, 20%);
+$charcoalgray: hsl(235, 18%, 26%);
+$gray: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+
+// Font
+
+@font-face {
+    font-family: roboto;
+    src: url(../../assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: robotobold;
+    src: url(../../assets/fonts/Roboto-Bold.ttf);
+}
+
+$roboto: roboto;
+$roboto-bold: robotobold;
+
+// Media Queries
+
+@mixin responsive($breakpoint) {
+    @if($breakpoint == 'mobile') {
+        @media screen and (max-width: '425px') {
+            @content
+        }
+    };
+
+    @if($breakpoint == 'desktop') {
+        @media screen and (min-width: '426px') {
+            @content
+        }
+    }
+}
