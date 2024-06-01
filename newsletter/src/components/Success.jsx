@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import icon from "../assets/images/icon-list.svg"
 import Btn from "./Btn";
 
