@@ -24,17 +24,15 @@
   }
 }
 
-.container {
+.container .home {
   background: hsl(0, 0%, 100%);
   border-radius: 20px;
 }
 @media screen and (min-width: 426px) {
-  .container {
+  .container .home {
     display: flex;
     flex-direction: row-reverse;
-    width: 90%;
-    height: 85vh;
-    padding-inline: 30px;
+    padding-left: 30px;
   }
   .container .right-side {
     width: 50%;
@@ -42,7 +40,7 @@
   .container .right-side img {
     position: relative;
     right: -14%;
-    width: 89%;
+    width: 80%;
     margin-top: 20px;
   }
   .container .btn {
@@ -59,7 +57,7 @@
     border-bottom-left-radius: 35px;
   }
 }
-.container .hero h3 {
+.container h3 {
   font-family: robotobold;
   color: hsl(234, 29%, 20%);
   margin: 10px auto;
@@ -88,13 +86,6 @@
   font-size: 14px;
   margin: 10px auto;
 }
-.container .left-side .form .btn {
-  background-color: hsl(234, 29%, 20%);
-  padding: 15px;
-  text-transform: lowercase;
-  margin-top: 20px;
-  border-radius: 10px;
-}
 .container .left-side .form h6 {
   font-size: 16px;
   color: hsl(234, 29%, 20%);
@@ -105,4 +96,28 @@
     margin: 5px 0;
     font-size: 14px;
   }
+}
+.container .btn {
+  background-color: hsl(234, 29%, 20%);
+  padding: 15px;
+  text-transform: capitalize;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.container .btn:hover {
+  background: hsl(234, 29%, 20%);
+}
+.container .success {
+  border-radius: 20px;
+  background: hsl(0, 0%, 100%);
+  width: 37%;
+  margin-left: 25%;
+  padding-inline: 50px;
+  padding-top: 30px;
+}
+.container .success img {
+  width: 40px;
+}
+.container .success p {
+  font-family: roboto;
 }

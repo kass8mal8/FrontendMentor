@@ -1,22 +1,18 @@
-import { Box, Stack } from "@mui/material";
-import illustrationDesktop from "./assets/images/illustration-sign-up-desktop.svg"
-import illustrationMobile from "./assets/images/illustration-sign-up-mobile.svg"
-
+import { Box } from "@mui/material";
 import "./styles/css/index.css"
-import Hero from "./components/Hero";
-import Form from "./components/Form";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Success from "./components/Success";
+import { useState } from "react";
 
 const App = () => {
-  const viewport = window.innerWidth
+  const [data, setData] = useState({})
   return (  
     <Box className='container'>
-      <Box className='right-side'>
-        <img src={viewport <= 425 ? illustrationMobile : illustrationDesktop} alt='illustration' className='img' />
-      </Box>
-      <Box className='left-side'>
-        <Hero />
-        <Form />
-      </Box>
+      <Routes>
+        <Route path="/" element={<Home data={data} setData={setData} />} />
+        <Route path="/success" element={<Success data={data} setData={setData} />} />
+      </Routes>
     </Box>
   );
 }

@@ -1,20 +1,19 @@
 import { TextField, Typography, Box, Stack, touchRippleClasses } from "@mui/material";
 import Btn from "./Btn";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Form = () => {
+const Form = ({ data, setData }) => {
     const [isError, setIsError] = useState(false)
-    const [data, setData] = useState({})
+    
     const checkCom = ['.com']
     let checkAt = false
     let comCheck = false
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         setData(e.target.value)
     }
-
-    // console.log(data)
-    
 
     const handleSubmit = (e) => {
         setIsError(false)
@@ -23,7 +22,13 @@ const Form = () => {
         comCheck = checkCom.includes(data.slice(-4)) && true
         for(let x of data) if(x === '@') checkAt = true
 
-        !(checkAt && comCheck) ? setIsError(true) : setIsError(false)
+        if(!(checkAt && comCheck)) {
+            setIsError(true)
+        }
+        else {
+            setIsError(false)
+            navigate('/success')
+        }
         console.log(checkAt, comCheck)
 
     }
