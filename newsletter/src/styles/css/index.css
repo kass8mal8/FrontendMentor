@@ -13,13 +13,15 @@
   font-family: roboto;
 }
 
+body {
+  background: hsl(235, 18%, 26%);
+}
 @media screen and (min-width: 426px) {
   body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: hsl(235, 18%, 26%);
     flex-flow: row;
   }
 }
@@ -27,6 +29,9 @@
 .container .home {
   background: hsl(0, 0%, 100%);
   border-radius: 20px;
+}
+.container h6, .container h3 {
+  font-family: robotobold;
 }
 @media screen and (min-width: 426px) {
   .container .home {
@@ -58,7 +63,6 @@
   }
 }
 .container h3 {
-  font-family: robotobold;
   color: hsl(234, 29%, 20%);
   margin: 10px auto;
 }
@@ -89,7 +93,6 @@
 .container .left-side .form h6 {
   font-size: 16px;
   color: hsl(234, 29%, 20%);
-  font-family: robotobold;
 }
 @media screen and (min-width: 426px) {
   .container .left-side .form h6 {
@@ -112,12 +115,31 @@
   background: hsl(0, 0%, 100%);
   width: 37%;
   margin-left: 25%;
-  padding-inline: 50px;
+  padding-inline: 2em;
   padding-top: 30px;
 }
 .container .success img {
   width: 40px;
 }
-.container .success p {
-  font-family: roboto;
+@media screen and (max-width: 425px) {
+  .container .success {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 5em;
+    padding-bottom: 2em;
+    border-radius: 0;
+    height: 100lvh;
+  }
+  .container .success h3 {
+    margin-bottom: 0.6em;
+  }
+  .container .success img {
+    width: 4em;
+    margin: 2em auto;
+  }
+  .container .success .btn {
+    position: absolute;
+    bottom: 30px;
+    width: 84%;
+  }
 }
