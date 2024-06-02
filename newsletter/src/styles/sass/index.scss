@@ -22,7 +22,6 @@ body {
 .container {
     .home {
         background: $white;
-        border-radius: 20px;
     }
 
     h6, h3 {
@@ -34,6 +33,7 @@ body {
             display: flex;
             flex-direction: row-reverse;
             padding-left: 30px;
+            border-radius: 20px;    
         }
 
         .right-side {
