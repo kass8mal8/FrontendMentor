@@ -1,7 +1,11 @@
 import { Box, ThemeProvider, createTheme } from '@mui/material'
 import './styles/css/index.css';
-import Btn from './components/Btn';
 import Section from './components/Section';
+import { Route, Routes } from 'react-router-dom';
+import Thanks from './components/Thanks';
+import { createContext, useState } from 'react';
+
+export const RatingContext = createContext({})
 
 function App() {
   const theme = createTheme({
@@ -10,13 +14,19 @@ function App() {
     }
   })
 
+  const [selected, setSelected] = useState(null)
+
   return (
-    <ThemeProvider theme={theme}>
-      <Box className='container'>
-        <Section />
-        <Btn />
-      </Box>
-    </ThemeProvider>
+    <RatingContext.Provider value={{selected, setSelected}}>
+      <ThemeProvider theme={theme}>
+        <Box className='container'>
+          <Routes>
+            <Route path='/' element={<Section />} />
+            <Route path="thanks" element={<Thanks />} />
+          </Routes>
+        </Box>
+      </ThemeProvider>
+    </RatingContext.Provider>
   )
 }
 

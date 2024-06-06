@@ -22,14 +22,14 @@ body {
   background: hsl(213, 21%, 10%);
   border-radius: 1rem;
   color: hsl(217, 12%, 63%);
-  max-width: 25rem;
+  max-width: 22rem;
+}
+.container h5 {
+  color: hsl(0, 0%, 100%);
+  margin: 0.8em auto;
 }
 .container .section {
   margin: 1.5em auto;
-}
-.container .section h5 {
-  color: hsl(0, 0%, 100%);
-  margin: 0.8em auto;
 }
 .container .section img {
   background: hsla(217, 12%, 63%, 0.1);
@@ -57,7 +57,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1em auto;
+  margin: 2em auto;
 }
 .container ul li {
   background: hsl(213, 19%, 18%);
@@ -72,4 +72,18 @@ body {
   color: hsl(216, 12%, 8%);
   transition: 0.3s ease-in-out;
   cursor: pointer;
+}
+.container .thanks {
+  text-align: center;
+}
+.container .thanks img {
+  margin-top: 2rem;
+}
+.container .thanks aside {
+  padding: 7px;
+  color: hsl(25, 97%, 53%);
+  background: hsla(37, 12%, 22%, 0.2);
+  border-radius: 40px;
+  margin: 30px auto;
+  max-width: 13rem;
 }

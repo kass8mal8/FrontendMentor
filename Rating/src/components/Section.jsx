@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import SelectRate from "./SelectRate";
 import icon_star from "../assets/images/icon-star.svg";
+import Btn from "./Btn";
 
 const Section = () => {
     return (  
@@ -14,6 +15,7 @@ const Section = () => {
             </Typography>
 
             <SelectRate />
+            <Btn />
         </Box>
     );
 }

@@ -15,11 +15,3 @@ $very-dark-blue: hsl(216, 12%, 8%);
 }
 
 $overpass: overpass;
-
-@mixin responsive($viewport) {
-    @if($viewport == 'mobile') {
-        @media screen and (max-width: 425px){
-            @content ;
-        }
-    };
-};

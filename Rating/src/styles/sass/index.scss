@@ -20,14 +20,14 @@ body {
     background: hsl(213, 21%, 10%);
     border-radius: 1rem;
     color: $light-grey;
-    max-width: 25rem;
+    max-width: 22rem;
 
+    h5 {
+        color: $white;
+        margin: .8em auto;
+    }
     .section {
         margin: 1.5em auto;
-        h5 {
-            color: $white;
-            margin: .8em auto;
-        }
 
         img {
             background: hsla(217, 12%, 63%, .1);
@@ -61,7 +61,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 1em auto;
+        margin: 2em auto;
         
         li {
             background: $dark-blue;
@@ -79,6 +79,24 @@ body {
             }
         }
         
+    }
+
+    .thanks {
+        text-align: center;
+
+        img {
+            margin-top: 2rem;
+        }
+        
+        aside {
+            padding: 7px;
+            color: $orange;
+            background: hsla(37, 12%, 22%, 0.2);
+            border-radius: 40px;
+            margin: 30px auto;
+            max-width: 13rem;
+
+        }
     }
 
 }
