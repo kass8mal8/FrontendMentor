@@ -1,0 +1,18 @@
+@font-face {
+  font-family: jakarta;
+  src: url(../../assets/fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  font-family: jakarta-bold;
+  src: url(../../assets/fonts/PlusJakartaSans-Bold.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: jakarta;
+}
+
+p {
+  font-family: jakarta;
+}
