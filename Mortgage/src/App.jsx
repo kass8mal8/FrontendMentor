@@ -1,4 +1,7 @@
-import { ThemeProvider, Typography, createTheme } from "@mui/material";
+import { Box, ThemeProvider, createTheme } from "@mui/material";
+import Header from "./components/calculator/Header";
+import Empty from "./components/result/Empty";
+import Form from "./components/calculator/Form";
 
 function App() {
 	const theme = createTheme({
@@ -9,7 +12,17 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Typography>Hello world</Typography>
+			<Box className="container">
+				<Box className="wrapper">
+					<Box className="calculator">
+						<Header />
+						<Form />
+					</Box>
+					<Box className="result">
+						<Empty />
+					</Box>
+				</Box>
+			</Box>
 		</ThemeProvider>
 	);
 }

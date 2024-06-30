@@ -13,6 +13,72 @@
   font-family: jakarta;
 }
 
-p {
-  font-family: jakarta;
+.container {
+  padding-inline: 1.4rem;
+}
+.container .wrapper .calculator {
+  width: 100%;
+  background: hsl(0, 0%, 100%);
+}
+.container .wrapper .calculator .header h5 {
+  margin: 0.5rem 0;
+}
+.container .wrapper .calculator .label {
+  margin: 10px 0;
+  color: hsl(200, 24%, 40%);
+}
+.container .wrapper .calculator ul {
+  margin-top: 20px;
+}
+.container .wrapper .calculator ul h6 {
+  font-size: 16px;
+  color: hsl(200, 24%, 40%);
+}
+.container .wrapper .calculator ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid hsl(203, 41%, 72%);
+  padding: 0.8rem;
+  border-radius: 3px;
+  margin: 10px 0;
+}
+.container .wrapper .calculator ul li input {
+  width: 15px;
+  height: 15px;
+}
+.container .wrapper .calculator ul li:has(input:checked) {
+  border-color: hsl(61, 70%, 52%);
+  accent-color: hsl(61, 70%, 52%);
+  outline: none;
+}
+.container a {
+  color: hsl(200, 24%, 40%);
+}
+@media (width > 768px) {
+  .container {
+    margin-left: 10em;
+    padding: 2em;
+    width: 80%;
+  }
+  .container .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (width > 426px) {
+  .container .header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  .container .stack {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
 }

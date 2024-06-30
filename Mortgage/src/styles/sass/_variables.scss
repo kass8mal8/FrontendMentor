@@ -24,3 +24,16 @@ $slate-900: hsl(202, 55%, 16%);
 
 $jakarta: jakarta;
 $jakarta-bold: jakarta-bold;
+
+@mixin responsive($breakpoint) {
+	@if ($breakpoint == "desktop") {
+		@media (width > 768px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == "tablet") {
+		@media (width > 426px) {
+			@content;
+		}
+	}
+}

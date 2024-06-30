@@ -7,6 +7,85 @@
 	font-family: $jakarta;
 }
 
-p {
-	font-family: $jakarta;
+.container {
+	padding-inline: 1.4rem;
+
+	.wrapper {
+		.calculator {
+			width: 100%;
+			background: $white;
+
+			.header {
+				h5 {
+					margin: 0.5rem 0;
+				}
+			}
+
+			.label {
+				margin: 10px 0;
+				color: $slate-700;
+			}
+
+			ul {
+				margin-top: 20px;
+				h6 {
+					font-size: 16px;
+					color: $slate-700;
+				}
+				li {
+					list-style: none;
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					border: 2px solid $slate-300;
+					padding: 0.8rem;
+					border-radius: 3px;
+					margin: 10px 0;
+
+					input {
+						width: 15px;
+						height: 15px;
+					}
+
+					&:has(input:checked) {
+						border-color: $lime;
+						accent-color: $lime;
+						outline: none;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		color: $slate-700;
+	}
+
+	@include responsive("desktop") {
+		margin-left: 10em;
+		padding: 2em;
+		width: 80%;
+
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	@include responsive("tablet") {
+		.header {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.stack {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 20px;
+		}
+	}
 }
