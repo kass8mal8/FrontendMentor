@@ -1,6 +1,7 @@
 import { Box, TextField, Typography, Stack } from "@mui/material";
 import { CurrencyPound, Percent } from "@mui/icons-material";
 import Type from "./Type";
+import CalcButton from "./CalcButton";
 
 const Form = () => {
 	return (
@@ -107,6 +108,7 @@ const Form = () => {
 				</Box>
 			</Stack>
 			<Type />
+			<CalcButton />
 		</form>
 	);
 };
