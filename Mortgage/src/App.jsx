@@ -2,6 +2,8 @@ import { Box, ThemeProvider, createTheme } from "@mui/material";
 import Header from "./components/calculator/Header";
 import Empty from "./components/result/Empty";
 import Form from "./components/calculator/Form";
+import Full from "./components/result/Full";
+import { useState } from "react";
 
 function App() {
 	const theme = createTheme({
@@ -9,6 +11,7 @@ function App() {
 			fontFamily: "jakarta",
 		},
 	});
+	const [result, setResult] = useState(null);
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -16,10 +19,10 @@ function App() {
 				<Box className="wrapper">
 					<Box className="calculator">
 						<Header />
-						<Form />
+						<Form setResult={setResult} />
 					</Box>
 					<Box className="result">
-						<Empty />
+						{result ? <Full result={result} /> : <Empty />}
 					</Box>
 				</Box>
 			</Box>

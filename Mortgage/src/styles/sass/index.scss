@@ -62,31 +62,32 @@ body {
 				}
 			}
 
-			.btn-container {
-				width: 100%;
-				.btn {
-					background: $lime;
-					box-shadow: none;
-					text-transform: capitalize;
-					color: $slate-900;
-					font-weight: 600;
-					border-radius: 2em;
-					margin-top: 10px;
-					padding: 10px;
+			.btn {
+				background: $lime;
+				box-shadow: none;
+				text-transform: capitalize;
+				color: $slate-900;
+				font-weight: 600;
+				border-radius: 2em;
+				margin-top: 10px;
+				padding: 10px 20px;
+
+				@include responsive("mobile") {
+					width: 100%;
 				}
 			}
 		}
 	}
 
 	.result {
-		background: $slate-900;
+		background: #133040;
 		width: 100lvw;
 		margin-left: -1.5rem;
 		margin-top: 20px;
-		text-align: center;
-		padding-block: 3em;
+		padding-block: 2em;
 
 		.empty {
+			text-align: center;
 			color: $white;
 
 			h5 {
@@ -96,6 +97,36 @@ body {
 
 			p {
 				opacity: 0.6;
+			}
+		}
+
+		.full {
+			padding-inline: 2em;
+
+			.mortgage {
+				padding: 15px;
+				background: #0e2431;
+				margin-top: 2em;
+				border-radius: 10px;
+				border-top: 3px solid $lime;
+
+				.stack {
+					color: $lime;
+
+					h4 {
+						font-size: 3em;
+					}
+				}
+			}
+
+			p {
+				opacity: 0.6;
+				color: $white;
+			}
+
+			h5 {
+				margin-bottom: 20px;
+				color: $white;
 			}
 		}
 	}
@@ -108,7 +139,7 @@ body {
 		margin-left: 10em;
 		padding: 2em;
 		width: 80%;
-		margin-top: 3em;
+		// margin-top: 3em;
 
 		.calculator {
 			border: 1px solid $white;
@@ -118,9 +149,9 @@ body {
 			padding-right: 5em;
 			width: 120%;
 
-			.btn-container {
+			.btn {
 				margin: 15px 0;
-				width: 60%;
+				width: 65%;
 			}
 		}
 
@@ -129,7 +160,7 @@ body {
 			margin-left: -3em;
 			margin-top: 0;
 			border: 2px solid $slate-900;
-			height: 78lvh;
+			height: 87lvh;
 			border-top-right-radius: 15px;
 			border-bottom-right-radius: 15px;
 			border-bottom-left-radius: 4em;

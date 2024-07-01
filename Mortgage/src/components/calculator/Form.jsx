@@ -2,10 +2,17 @@ import { Box, TextField, Typography, Stack } from "@mui/material";
 import { CurrencyPound, Percent } from "@mui/icons-material";
 import Type from "./Type";
 import CalcButton from "./CalcButton";
+import { useState } from "react";
 
 const Form = () => {
+	const [mortgageDetails, setMortgageDetails] = useState({});
+	const handleChange = (e) => {
+		setMortgageDetails({ ...mortgageDetails, [e.target.name]: e.target.value });
+	};
+	const handleSubmit = () => {};
+
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			<Box my={2}>
 				<Typography variant="body2" className="label">
 					Mortgage Amount
@@ -13,6 +20,7 @@ const Form = () => {
 				<TextField
 					name="amount"
 					fullWidth
+					onChange={handleChange}
 					InputProps={{
 						startAdornment: (
 							<Box
@@ -47,8 +55,9 @@ const Form = () => {
 						Mortgage Term
 					</Typography>
 					<TextField
-						name="amount"
+						name="time"
 						fullWidth
+						onChange={handleChange}
 						InputProps={{
 							endAdornment: (
 								<Box
@@ -79,8 +88,9 @@ const Form = () => {
 						Interest Rate
 					</Typography>
 					<TextField
-						name="amount"
+						name="rate"
 						fullWidth
+						onChange={handleChange}
 						InputProps={{
 							endAdornment: (
 								<Box

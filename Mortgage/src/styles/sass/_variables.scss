@@ -36,4 +36,9 @@ $jakarta-bold: jakarta-bold;
 			@content;
 		}
 	}
+	@if ($breakpoint == "mobile") {
+		@media (width < 425px) {
+			@content;
+		}
+	}
 }
