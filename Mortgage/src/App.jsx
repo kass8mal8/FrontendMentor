@@ -12,6 +12,7 @@ function App() {
 		},
 	});
 	const [result, setResult] = useState(null);
+	console.log(result);
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -19,7 +20,7 @@ function App() {
 				<Box className="wrapper">
 					<Box className="calculator">
 						<Header />
-						<Form setResult={setResult} />
+						<Form setResult={setResult} result={result} />
 					</Box>
 					<Box className="result">
 						{result ? <Full result={result} /> : <Empty />}

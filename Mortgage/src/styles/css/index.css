@@ -105,6 +105,7 @@
 }
 .container .result .full .mortgage .stack {
   color: hsl(61, 70%, 52%);
+  align-items: center;
 }
 .container .result .full .mortgage .stack h4 {
   font-size: 3em;
@@ -170,7 +171,7 @@
   .container .stack {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
   }
 }

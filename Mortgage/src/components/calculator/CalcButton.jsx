@@ -6,6 +6,7 @@ const CalcButton = () => {
 		<Button
 			variant="contained"
 			className="btn"
+			type="submit"
 			// fullWidth
 			startIcon={<img src={calculator} alt="calculator" />}
 		>

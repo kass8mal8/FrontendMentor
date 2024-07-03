@@ -1,15 +1,42 @@
+/* eslint-disable react/prop-types */
 import { Box, TextField, Typography, Stack } from "@mui/material";
 import { CurrencyPound, Percent } from "@mui/icons-material";
 import Type from "./Type";
 import CalcButton from "./CalcButton";
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ setResult, result }) => {
 	const [mortgageDetails, setMortgageDetails] = useState({});
 	const handleChange = (e) => {
 		setMortgageDetails({ ...mortgageDetails, [e.target.name]: e.target.value });
 	};
-	const handleSubmit = () => {};
+
+	const calculateMonthly = (rate, amount, time) => {
+		const numerator = amount * rate;
+		const denominator = 1 - Math.pow(1 + rate, -time);
+		const answer = numerator / denominator;
+
+		// setResult({ ...result, monthly: numerator / denominator });
+		return answer;
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		const rate = mortgageDetails?.rate / 100 / 12;
+		const amount = mortgageDetails?.amount;
+		const time = mortgageDetails?.time * 12;
+		console.log(time);
+
+		try {
+			const monthly = await calculateMonthly(rate, amount, time);
+			const yearly = monthly * time;
+
+			setResult({ ...result, monthly, yearly });
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	return (
 		<form onSubmit={handleSubmit}>
@@ -117,7 +144,7 @@ const Form = () => {
 					/>
 				</Box>
 			</Stack>
-			<Type />
+			<Type handleChange={handleChange} />
 			<CalcButton />
 		</form>
 	);
