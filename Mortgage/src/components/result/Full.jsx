@@ -17,7 +17,7 @@ const Full = ({ result }) => {
 			<Box className="mortgage">
 				<Typography>Your monthly repayments</Typography>
 				<Stack className="stack" direction="row" alignItems={"center"} my={1.3}>
-					<CurrencyPound sx={{ width: "50px", height: "50px" }} />
+					<CurrencyPound sx={{ width: "50px", height: "50px", mr: -1 }} />
 					<Typography variant="h4">{result?.monthly?.toFixed(2)}</Typography>
 				</Stack>
 				<Typography
@@ -29,7 +29,12 @@ const Full = ({ result }) => {
 					</Typography>
 					<Stack className="stack" direction="row" my={1.3}>
 						<CurrencyPound
-							sx={{ width: "30px", height: "30px", color: "white" }}
+							sx={{
+								width: "25px",
+								height: "25px",
+								color: "white",
+								mt: -2.5,
+							}}
 						/>
 
 						<Typography variant="h5" sx={{ color: "white" }}>

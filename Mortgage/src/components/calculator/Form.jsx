@@ -5,7 +5,7 @@ import Type from "./Type";
 import CalcButton from "./CalcButton";
 import { useState } from "react";
 
-const Form = ({ setResult, result }) => {
+const Form = ({ setResult, result, isError, setIsError }) => {
 	const [mortgageDetails, setMortgageDetails] = useState({});
 	const handleChange = (e) => {
 		setMortgageDetails({ ...mortgageDetails, [e.target.name]: e.target.value });
@@ -14,14 +14,17 @@ const Form = ({ setResult, result }) => {
 	const calculateMonthly = (rate, amount, time) => {
 		const numerator = amount * rate;
 		const denominator = 1 - Math.pow(1 + rate, -time);
-		const answer = numerator / denominator;
 
-		// setResult({ ...result, monthly: numerator / denominator });
-		return answer;
+		return numerator / denominator;
 	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		if (Object.keys(mortgageDetails).length === 0) {
+			setIsError(true);
+			return;
+		}
 
 		const rate = mortgageDetails?.rate / 100 / 12;
 		const amount = mortgageDetails?.amount;
@@ -33,6 +36,7 @@ const Form = ({ setResult, result }) => {
 			const yearly = monthly * time;
 
 			setResult({ ...result, monthly, yearly });
+			setMortgageDetails({});
 		} catch (error) {
 			console.error(error);
 		}
@@ -52,13 +56,14 @@ const Form = ({ setResult, result }) => {
 						startAdornment: (
 							<Box
 								sx={{
-									background: "hsl(202, 86%, 94%)",
+									background: isError
+										? "hsl(4, 69%, 50%)"
+										: "hsl(202, 86%, 94%)",
 									ml: -1.6,
 									p: 1.4,
 									height: "55px",
 									alignItems: "center",
 									mr: 1,
-									// borderTopLeftRadius: "5px",
 								}}
 							>
 								<CurrencyPound />
@@ -70,11 +75,17 @@ const Form = ({ setResult, result }) => {
 							border: "2px solid hsl(61, 70%, 52%)!important",
 						},
 						"& fieldset": {
-							border: "2px solid hsl(203, 41%, 72%)!important",
-							// borderWidth: "2px", // Change the border width here
+							border: `2px solid ${
+								isError ? "hsl(4, 69%, 50%)" : "hsl(203, 41%, 72%)!important"
+							}`,
 						},
 					}}
 				/>
+				{isError && (
+					<Typography variant="body2" mt={2} sx={{ color: "hsl(4, 69%, 50%)" }}>
+						This field is required
+					</Typography>
+				)}
 			</Box>
 			<Stack my={2} className="stack">
 				<Box>
@@ -89,7 +100,9 @@ const Form = ({ setResult, result }) => {
 							endAdornment: (
 								<Box
 									sx={{
-										background: "hsl(202, 86%, 94%)",
+										background: isError
+											? "hsl(4, 69%, 50%)"
+											: "hsl(202, 86%, 94%)",
 										p: 1.7,
 										mr: -1.6,
 										height: "55px",
@@ -104,11 +117,21 @@ const Form = ({ setResult, result }) => {
 								border: "2px solid hsl(61, 70%, 52%)!important",
 							},
 							"& fieldset": {
-								border: "2px solid hsl(203, 41%, 72%)!important",
-								// borderWidth: "2px", // Change the border width here
+								border: `2px solid ${
+									isError ? "hsl(4, 69%, 50%)" : "hsl(203, 41%, 72%)!important"
+								}`,
 							},
 						}}
 					/>
+					{isError && (
+						<Typography
+							variant="body2"
+							mt={2}
+							sx={{ color: "hsl(4, 69%, 50%)" }}
+						>
+							This field is required
+						</Typography>
+					)}
 				</Box>
 				<Box>
 					<Typography variant="body2" className="label">
@@ -122,7 +145,9 @@ const Form = ({ setResult, result }) => {
 							endAdornment: (
 								<Box
 									sx={{
-										background: "hsl(202, 86%, 94%)",
+										background: isError
+											? "hsl(4, 69%, 50%)"
+											: "hsl(202, 86%, 94%)",
 										p: 1.7,
 										mr: -1.6,
 										height: "55px",
@@ -137,14 +162,24 @@ const Form = ({ setResult, result }) => {
 								border: "2px solid hsl(61, 70%, 52%)!important",
 							},
 							"& fieldset": {
-								border: "2px solid hsl(203, 41%, 72%)!important",
-								// borderWidth: "2px", // Change the border width here
+								border: `2px solid ${
+									isError ? "hsl(4, 69%, 50%)" : "hsl(203, 41%, 72%)!important"
+								}`,
 							},
 						}}
 					/>
+					{isError && (
+						<Typography
+							variant="body2"
+							mt={2}
+							sx={{ color: "hsl(4, 69%, 50%)" }}
+						>
+							This field is required
+						</Typography>
+					)}
 				</Box>
 			</Stack>
-			<Type handleChange={handleChange} />
+			<Type handleChange={handleChange} isError={isError} />
 			<CalcButton />
 		</form>
 	);

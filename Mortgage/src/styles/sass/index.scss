@@ -19,7 +19,7 @@ body {
 
 	.wrapper {
 		.calculator {
-			width: 100%;
+			// width: 100%;
 			background: $white;
 
 			.header {
@@ -137,10 +137,9 @@ body {
 	}
 
 	@include responsive("desktop") {
-		margin-left: 10em;
+		margin-left: 13em;
 		padding: 2em;
-		width: 80%;
-		// margin-top: 3em;
+		width: 70%;
 
 		.calculator {
 			border: 1px solid $white;
@@ -148,7 +147,7 @@ body {
 			border-top-left-radius: 15px;
 			border-bottom-left-radius: 15px;
 			padding-right: 5em;
-			width: 120%;
+			width: 70%;
 
 			.btn {
 				margin: 15px 0;
@@ -157,19 +156,25 @@ body {
 		}
 
 		.result {
-			width: 100%;
+			width: 70%;
 			margin-left: -3em;
 			margin-top: 0;
 			border: 2px solid $slate-900;
-			height: 87lvh;
+			// height: 87lvh;
 			border-top-right-radius: 15px;
 			border-bottom-right-radius: 15px;
 			border-bottom-left-radius: 4em;
+			padding: 2em 0 5.1em 0;
 
 			.empty {
-				margin-top: 4em;
-				width: 75%;
+				// margin-top: 4em;
+				padding: 4.4em 0;
+				width: 90%;
 				margin-inline: auto;
+
+				p {
+					font-size: 11.4pt;
+				}
 			}
 		}
 
@@ -189,11 +194,13 @@ body {
 			align-items: center;
 		}
 
-		.stack {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			gap: 10px;
+		form {
+			.stack {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 20px;
+			}
 		}
 	}
 }
