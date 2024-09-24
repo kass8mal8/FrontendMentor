@@ -1,0 +1,90 @@
+@font-face {
+	font-family: dmsansRegular;
+	src: url(./assets/fonts/static/DMSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: dmsansMedium;
+	src: url(./assets/fonts/static/DMSans-Medium.ttf);
+}
+
+@font-face {
+	font-family: dmsansMediumItalic;
+	src: url(./assets/fonts/static/DMSans-MediumItalic.ttf);
+}
+
+.container {
+	font-family: dmsansRegular;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: auto auto auto;
+	gap: 20px;
+	width: 90%;
+	margin: 0 auto;
+
+	.create-post {
+		background: hsl(31, 66%, 93%);
+		border-radius: 5px;
+		padding: 3em 2em;
+		font-family: dmsansMedium;
+		height: 20em;
+
+		h1 {
+			font-weight: bolder;
+			line-height: 2rem;
+			/* font-size: 2.5em; */
+		}
+
+		.quicker {
+			font-family: dmsansMediumItalic;
+			color: hsl(256, 67%, 59%);
+		}
+	}
+
+	.social-media {
+		background: hsl(256, 67%, 59%);
+		color: white;
+		padding: 10px;
+		border-radius: 5px;
+		text-align: center;
+		height: 17em;
+
+		h1 {
+			font-size: 4em;
+			text-align: center;
+		}
+		span {
+			color: hsl(39, 100%, 71%);
+		}
+	}
+
+	.schedule-posts {
+		background: hsl(254, 88%, 90%);
+		padding: 10px;
+		padding-left: 25px;
+		border-radius: 5px;
+		grid-column: 3 / 3;
+		grid-row: 1 / 2;
+		/* position: relative; */
+		overflow: hidden;
+
+		img {
+			position: relative;
+			width: 400px;
+			/* right: -5rem; */
+		}
+	}
+
+	.ai-content {
+		background: hsl(39, 100%, 71%);
+		padding-inline: 2em;
+		border-radius: 5px;
+		margin-top: -10rem;
+
+		h1 {
+			font-weight: bolder;
+			line-height: 2rem;
+			/* font-size: 2.5em; */
+		}
+	}
+}
